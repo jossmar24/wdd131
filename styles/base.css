@@ -60,11 +60,11 @@ body {
 	font-size: larger;
   }
   
-  #onecard {
+  #cardNone {
 	grid-column: 1 / 3;
   }
   
-  #twocard {
+  #cardNtwo {
 	grid-column: 3 / 4;
 	margin-left: 0;
   }

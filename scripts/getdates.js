@@ -1,6 +1,6 @@
 // Set the current year
 
-const year = document.querySelector("#year");
+const year = document.querySelector("#current_date");
 const lastModify = document.querySelector("#lastModified");
 
 const today = new Date();
