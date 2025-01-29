@@ -78,6 +78,8 @@ nav ul li a:hover {
   font-size: 2rem;
   cursor: pointer;
   display: none;
+  float: right;
+  margin-right: 1.5rem;
 }
 
 main {
