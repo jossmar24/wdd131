@@ -141,9 +141,11 @@ footer {
     top: 60px;
     right: 0;
     background: #1f4446;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0;
+    width: auto;
+    min-width: 150px;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
   }
   
   nav ul.show-menu {
@@ -151,6 +153,7 @@ footer {
   }
 
   nav ul li {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
   }
 }
