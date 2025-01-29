@@ -47,7 +47,19 @@ nav ul {
   list-style: none;
   gap: 3rem; 
 }
+nav ul {
+	list-style: none;
+	display: flex;
+}
 
+nav a {
+	display: block;
+	color: #fff;
+	text-align: center;
+	padding: 1rem;
+	text-decoration: none;
+	font-size: larger;
+}
 nav ul li a {
   color: white;
   text-decoration: none;
