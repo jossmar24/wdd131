@@ -25,31 +25,26 @@ header h1 {
   font-size: 1.5rem;
   
 }
-h1 span {
-  color: #e5f51a;
-}
 .menu-icon {
   font-size: 2rem;
   cursor: pointer;
   display: none;
 }
-
+h1 span {
+  color: #e5f51a;
+}
 nav {
   display: flex;
   justify-content: flex-end; 
-  padding: 0.5rem 2rem;
-  margin-right: 2rem; 
-  padding-right: 0.5rem 4rem;
 }
 
 nav ul {
   display: flex;
-  list-style: none;
-  gap: 3rem; 
+  display: flex;
+  gap: 2rem; 
 }
-nav ul {
+nav ul li {
 	list-style: none;
-	display: flex;
 }
 
 nav a {
@@ -137,3 +132,27 @@ footer {
   display: flex;
 }
 
+@media (max-width: 767px) {
+  nav ul {
+    display: block;
+  }
+}
+  nav ul {
+    display: none; /* Oculta el menú por defecto */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #1f4446;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  nav ul.show-menu {
+    display: flex; 
+  }
+
+  nav ul li {
+    margin-bottom: 1rem;
+  }
