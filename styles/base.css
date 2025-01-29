@@ -171,7 +171,6 @@ footer span {
     font-size: small;
 }
 
-
 a:focus, a:hover {
     outline: 2px solid #e5f51a;
 }
@@ -188,5 +187,4 @@ footer #current_date {
 footer #lastModified {
     font-style: bolder;
 }
-
 
