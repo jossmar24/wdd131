@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Picture Album</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/temples.css">
-    <link rel="stylesheet" href="styles/temples-large.css">
+    <title>WDD 131 - Picture Album</title>
+    <meta name="description"
+    content="Explore our Temple Album featuring beautiful LDS temples from around the world, including the Manhattan Temple and other iconic religious buildings. View old, new, large, and small temples.">
+    <meta name="author" content="Josselyn Martinez">
+    <link rel="stylesheet" href="./styles/temples-large.css">
+    <link rel="stylesheet" href="./styles/temples.css">
     <script src="./scripts/temples.js" defer></script>
 </head>
 
@@ -17,73 +17,55 @@
 
      <header>
         <h1>Picture Album</h1>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <a id="manu" href="#"></a>
         <nav>
-            <ul id="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Old</a></li>
-                <li><a href="#">New</a></li>
-                <li><a href="#">Large</a></li>
-                <li><a href="#">Small</a></li> 
+            <ul class="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Old</a></li>
+                <li><a href="">New</a></li>
+                <li><a href="">Large</a></li>
+                <li><a href="">Small</a></li> 
             </ul>
         </nav>
     </header>
 
     <main>
-        
         <h2>Home</h2>
-        <div class="grid">
-            <figure>
+        <div>
+            <figure><img src="images/louisiana_temple.webp" alt="temple">
+                <figcaption>Louisiana temple</figcaption>
+            </figure>
+            <figure><img src="images/louisiana_temple.webp" alt="temple">
+                <figcaption>Louisiana temple</figcaption>
+            </figure>
+            <figure><img src="images/louisiana_temple.webp" alt="temple">
+                <figcaption>Louisiana temple</figcaption>
+            </figure>
+            <figure><img src="images/louisiana_temple.webp" alt="temple">
+                <figcaption>Louisiana temple</figcaption>
+            </figure>
+            <figure><img src="images/louisiana_temple.webp" alt="temple">
+                <figcaption>Louisiana temple</figcaption>
+            </figure>
+            <figure><img src="images/louisiana_temple.webp" alt="temple">
+                <figcaption>Louisiana temple</figcaption>
+            </figure>
+            <figure><img src="images/louisiana_temple.webp" alt="temple">
+                <figcaption>Louisiana temple</figcaption>
+            </figure><figure>
                 <img src="images/louisiana_temple.webp" alt="temple">
                 <figcaption>Louisiana temple</figcaption>
             </figure>
-            <figure>
-                <img src="images/louisiana_temple.webp" alt="temple">
-                <figcaption>Louisiana temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/louisiana_temple.webp" alt="temple">
-                <figcaption>Louisiana temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/louisiana_temple.webp" alt="temple">
-                <figcaption>Louisiana temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/louisiana_temple.webp" alt="temple">
-                <figcaption>Louisiana temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/louisiana_temple.webp" alt="temple">
-                <figcaption>Louisiana temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/louisiana_temple.webp" alt="temple">
-                <figcaption>Louisiana temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/louisiana_temple.webp" alt="temple">
-                <figcaption>Louisiana temple</figcaption>
-            </figure>
-            <figure>
-                <img src="images/louisiana_temple.webp" alt="temple">
+            <figure><img src="images/louisiana_temple.webp" alt="temple">
                 <figcaption>Louisiana temple</figcaption>
             </figure>
         </div>
     </main>
 
     <footer>
-
-        <p id="current_date"></p>
-        <p id="lastModified"></p>
-
+        <p id="year"></p>
+        <p id="lastModify"></p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            document.getElementById("menu").classList.toggle("show-menu");
-        }
-    </script>
     
 </body>
 

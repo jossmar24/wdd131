@@ -1,11 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const year = document.querySelector("#current_date");
-    const lastModify = document.querySelector("#lastModified");
+const year = document.querySelector("#year");
+const lastModify = document.querySelector("#lastModify");
 
-    const today = new Date();
-    const theLastModify = document.lastModified;
+const mainnav = document.querySelector('.menu')
+const hambutton = document.querySelector('#menu');
 
-    year.innerHTML = `&copy; ${today.getFullYear()} | Josselyn Juleidy Martinez | Ecuador`;
-    lastModify.innerHTML = `<span>Last Modification: ${theLastModify}</span>`;
+const today = new Date();
+const theLastModify = document.lastModified;
 
+year.innerHTML = `&copy${today.getFullYear()} | Josselyn Juleidy Martinez | Ecuador`;
+lastModify.innerHTML = `<span>Last Modification: ${theLastModify}</span>`;
+
+hambutton.addEventListener('click', () => {
+  mainnav.classList.toggle('show');
+  hambutton.classList.toggle('show');
 });

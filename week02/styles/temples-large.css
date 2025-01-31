@@ -1,31 +1,32 @@
-@media (min-width: 900px) {
-  nav {
-    display: flex !important;
-    flex-direction: row;
-    justify-content: center;
-    position: static;
-    background-color: transparent;
+@media (min-width: 1264px) {
+  main div {
+    max-width: 1245px;
+    margin: 0 auto;
   }
+}
 
-  nav ul {
-    display: flex;
-    gap: 1rem;
-  }
-
-  nav ul li {
-    padding: 0;
-  }
-
-  .menu-icon {
+@media (min-width: 949px) {
+  #menu {
     display: none;
   }
 
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
+  nav ul.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
   }
 
-  main {
-    max-width: 1000px;
+  nav li {
+    display: block !important;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
