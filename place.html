@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzbekistan</title>
+    <meta name="description" content="The subject of the page is about a country or place where you live or have visited or wish to visit. There are specific, functional and developmental requirements for the layout, design, and content of the page.">
+    <meta name="author" content="Josselyn Martinez">
+    <link rel="stylesheet" href="./styles/place.css">
+    <script src="./scrips.jpg/place.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Uzbekistan</h1>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <picture>
+            <source srcset="./images/alce2.jpeg.jpeg" media="(min-width: 768px)">
+            <img src="./images/alce.jpeg" alt="Lemurs in Uzbekistan">
+        </picture>
+
+        <section class="data">
+            <h2>Data</h2>
+            <p><strong>Area:</strong>448,900 km²</p>
+            <p><strong>Population:</strong>36.757.899</p>
+            <p><strong>Capital:</strong> Tashkent</p>
+            <p><strong>Languages:</strong> uzbeko</p>
+            <p><strong>Currency:</strong>sum</p>
+            <p><strong>Time Zone:</strong>GMT+5</p>
+            <p><strong>Calling Code:</strong> +998</p>
+            <p><strong>Internet TLD:</strong>.uz</p>
+        </section>
+
+        <section class="weather">
+            <h2>Weather<span class="weather-icon"></span></h2>
+            <p><strong>Temperature:</strong> <span id="temperature">-1</span>°C</p>
+            <p><strong>Conditions:</strong>arid and continental</p>
+            <p><strong>Wind:</strong> <span id="wind-speed">120.0</span>km/h</p>
+            <p><strong>Wind Chill:</strong> <span id="wind-chill">Calculating...</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p id="year"></p>
+        <p id="lastModify"></p>
+    </footer>
+    
+</body>
+</html>
