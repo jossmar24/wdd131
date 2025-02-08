@@ -1,0 +1,108 @@
+* { 
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #1f4446; 
+    color: white;
+    padding: 1rem;
+  }
+  
+  main  {
+    text-align: center;
+  }
+  
+  main div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0 1rem;
+  }
+  
+  h2 {
+    padding: 1rem 0 0 0;
+    font-size: 2rem;
+    color: #1f4446;
+  }
+  
+  img {
+    max-width: 100%;
+    border-radius: 1rem 1rem 0 0 ;
+  }
+  
+  figure {
+    margin: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 1.2rem;
+    background-color: #eeeeee;
+    max-width: 100%;
+  }
+  
+  figcaption {
+    padding: 0.5rem;
+    background: #b9bfc2;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 949px) {
+    nav li {
+      display: none;
+    }
+  }
+  
+  nav li {
+      list-style: none;
+      flex-direction: column;
+      margin: 1.5rem;
+      cursor: pointer;
+      text-align: center;
+      font-size: 1.5rem;
+  }
+  
+  .show li {
+      display: block;
+  }
+  
+  a {
+      text-decoration: none;
+      color: #ffffff;
+  }
+  
+  a:hover {
+      color: #e5f51a;
+  }
+  
+  nav ul li a:hover {
+      text-decoration: underline;
+  }
+  
+  #menu {
+      position:absolute;
+      right: 1rem;
+      top: 0.9rem;
+      font-size: 3rem;
+  }
+  
+  #menu::before {
+    content: "≡";
+  }
+  
+  #menu.show::before {
+    content: "X";
+    font-size: 2rem;
+  }
+  
+  footer {
+    background-color: #1f4446;
+    line-height: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+  }
+  
+  footer span {
+    color: #ffffff;
+    font-size: 1rem;
+  }

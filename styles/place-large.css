@@ -1,0 +1,38 @@
+@media screen and (min-width: 1400px) {
+
+    main {
+      position: relative;
+    }
+  
+    .one {
+      position: absolute;
+      top: 0;
+      width: 30%;
+      background-color: #8683809d;
+      color: #ffffff;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.5rem;
+    }
+  
+    .one h2 {
+      color: #ffffff;
+      background-color: #C2B280;
+    }
+  
+    .two {
+      position: absolute;
+      width: 30%;
+      background-color: #8683809d;
+      color: #ffffff;
+      bottom: 3rem;
+      right: 1rem;
+      padding: 0.5rem;
+    }
+  
+    .two h2 {
+      color: #ffffff;
+      background-color: #C2B280;
+    }
+  }
+    
