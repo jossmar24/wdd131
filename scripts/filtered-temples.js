@@ -1,23 +1,16 @@
-const year = document.querySelector("#year");
-const lastModify = document.querySelector("#lastModify");
+let d = new Date();
+document.getElementById("currentYear").innerHTML = `&copy;${d.getFullYear()}` ;
+document.querySelector("#lastModified").textContent = `Last Modification: ${document.lastModified}` ;
 
-const mainnav = document.querySelector('.menu')
-const hambutton = document.querySelector('#menu');
+const hambutton = document.querySelector("#hambutton");
+const mainnav = document.querySelector("#navmenu");
 
-const today = new Date();
-const theLastModify = document.lastModified;
-
-year.innerHTML = `&copy${today.getFullYear()} | Josselyn Juleidy Martinez | Ecuador`;
-lastModify.innerHTML = `<span>Last Modification: ${theLastModify}</span>`;
 
 hambutton.addEventListener('click', () => {
   mainnav.classList.toggle('show');
   hambutton.classList.toggle('show');
 });
 
-function toggleActive(element) {
-
-}
 
 const temples = [
     {
@@ -76,20 +69,34 @@ const temples = [
       imageUrl:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-    // Add more temple objects here...
+    {
+      templeName: "Guayaquil Ecuador Temple",
+      location: "Guayaquil Ecuador, Temple"
+      dedicated: " 1999, August, 1-2",
+      area: 090510,
+      imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/_temp/058-Guayaquil-Ecuador-Temple.jpg"
+    }
+    {
+      templeName: "Quito Ecuador",
+      location: "Cumbayá, Quito",
+      dedicated: "2022, November, 20",
+      area: 170157,
+      imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/quito-ecuador-temple/quito-ecuador-temple-31202-main.jpg"
+    }
+    {
+      templeName: "Bogota Colombia",
+      location: "Bogota, Distrito Capital",
+      dedicated: "1999, April, 24-26",
+      area: 170157,
+      imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bogota-colombia-temple/bogota-colombia-temple-7733-main.jpg"
+    }
 ];
 
-createTempleCard(temples);
-
-const nonutahLink - document.querySelector("#nonutah");
-
-nonutahLink.addEventListener("click", () -> {
-  createTempleCard(temples.filter(temple -> !temples.location.includes("Utah")));
-});
-
-
 function createTempleCard(filteredTemples) {
-  filteredTemples.forEach(temple -> {
+  const grid = document.querySelector(".res-grid");
+  grid.innerHTML = "";
+
+  filteredTemples.forEach(temple => {
     let card = document.createElement("section");
     let name = document.createElement("h3");
     let location = document.createElement("p");
@@ -111,6 +118,28 @@ function createTempleCard(filteredTemples) {
     card.appendChild(area);
     card.appendChild(img);
 
-    document.querySelector(".res-grid").appendChild(card);
+    grid.appendChild(card);
 });
 }
+
+createTempleCard(temples);
+
+document.querySelector("#nonutah").addEventListener("click", () => {
+  createTempleCard(temples.filter((temple) => !temple.location.includes("Utah")));
+});
+
+document.querySelector("#new").addEventListener("click", () => {
+  createTempleCard(temples.filter((temple) => parseInt(temple.dedicated.split(",")[0]) > 2000));
+});
+
+document.querySelector("#large").addEventListener("click", () => {
+  createTempleCard(temples.filter((temple) => temple.area > 90000));
+});
+
+document.querySelector("#small").addEventListener("click", () => {
+  createTempleCard(temples.filter((temple) => temple.area < 10000));
+});
+
+document.querySelector("#home").addEventListener("click", () => {
+  createTempleCard(temples);
+});
