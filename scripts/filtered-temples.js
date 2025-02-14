@@ -1,10 +1,14 @@
-let d = new Date();
-document.getElementById("currentYear").innerHTML = `&copy;${d.getFullYear()}` ;
-document.querySelector("#lastModified").textContent = `Last Modification: ${document.lastModified}` ;
+const year = document.querySelector("#year");
+const lastModify = document.querySelector("#lastModify");
 
-const hambutton = document.querySelector("#hambutton");
-const mainnav = document.querySelector("#navmenu");
+const mainnav = document.querySelector('.menu')
+const hambutton = document.querySelector('#menu');
 
+const today = new Date();
+const theLastModify = document.lastModified;
+
+year.innerHTML = `&copy${today.getFullYear()} | Josselyn Juleidy Martinez | Ecuador`;
+lastModify.innerHTML = `<span>Last Modification: ${theLastModify}</span>`;
 
 hambutton.addEventListener('click', () => {
   mainnav.classList.toggle('show');
@@ -69,77 +73,98 @@ const temples = [
       imageUrl:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-    {
-      templeName: "Guayaquil Ecuador Temple",
-      location: "Guayaquil Ecuador, Temple"
-      dedicated: " 1999, August, 1-2",
-      area: 090510,
-      imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/_temp/058-Guayaquil-Ecuador-Temple.jpg"
-    }
-    {
-      templeName: "Quito Ecuador",
-      location: "Cumbayá, Quito",
-      dedicated: "2022, November, 20",
-      area: 170157,
-      imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/quito-ecuador-temple/quito-ecuador-temple-31202-main.jpg"
-    }
-    {
-      templeName: "Bogota Colombia",
-      location: "Bogota, Distrito Capital",
-      dedicated: "1999, April, 24-26",
-      area: 170157,
-      imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bogota-colombia-temple/bogota-colombia-temple-7733-main.jpg"
-    }
+    // Add more temple objects here...
 ];
 
-function createTempleCard(filteredTemples) {
-  const grid = document.querySelector(".res-grid");
-  grid.innerHTML = "";
+temple.push(
+  {
+    templeName: "Guayaquil Ecuador",
+    location: "Guayaquil, Ecuador",
+    dedicated: "1999, August, 1-2",
+    area: 85084,
+      imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/_temp/058-Guayaquil-Ecuador-Temple.jpg"
+  },
+  {
+    templeName: "Quito Ecuador",
+    location: "Cumbayá, Quito",
+    dedicated: "2019, November, 24",
+    area: 32000,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/quito-ecuador-temple/quito-ecuador-temple-31202-main.jpg"
+  },
+  {
+    templeName: "Bogota Colombia",
+    location: "Bogota, Distrito Capital",
+    dedicated: "1999, April, 24-26",
+    area: 170157,
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bogota-colombia-temple/bogota-colombia-temple-7733-main.jpg"
+  }
+);
 
-  filteredTemples.forEach(temple => {
-    let card = document.createElement("section");
-    let name = document.createElement("h3");
-    let location = document.createElement("p");
-    let dedication = document.createElement("p");
-    let area = document.createElement("p");
-    let img = document.createElement("img");
+function createTempleCard(temple) {
+  const article = document.createElement('article');
 
-    name.textContent = temple.templeName;
-    location.innerHTML = `<span="label">Location:</span> ${temple.location}`;
-    dedication.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
-    area.innerHTML = `<span class="label">Size:</span> ${temple.area} sq ft`;
-    img.setAttribute("src", temple.imageUrl);
-    img.setAttribute("alt", `${templeName} Temple`);
-    img.setAttribute("loading", "lazy");
+  const html = `
+    <figure><img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy">
+    <figcaption><h3>${temple.templeName}</h3>
+    <p>${temple.location}</p>
+    <p>Dedicated: ${temple.dedicated}</p>
+    <p>Area: ${temple.area.toLocaleString()} sq ft</p></figcaption></figure>
+  `;
 
-    card.appendChild(name);
-    card.appendChild(location);
-    card.appendChild(dedication);
-    card.appendChild(area);
-    card.appendChild(img);
-
-    grid.appendChild(card);
-});
+  article.innerHTML = html;
+  return article;
 }
 
-createTempleCard(temples);
+function displayTemples(templeList) {
+  displayDiv.innerHTML = '';
+  templeList.forEach(temple => {
+    const card = createTempleCard(temple);
+    displayDiv.appendChild(card);
+  });
+}
 
-document.querySelector("#nonutah").addEventListener("click", () => {
-  createTempleCard(temples.filter((temple) => !temple.location.includes("Utah")));
+function filterByDate(temples, year, isOlder) {
+  return temples.filter(temple => {
+    const templeYear = parseInt(temple.dedicated.split(', ')[0]);
+    return isOlder ? templeYear < year : templeYear > year;
+  });
+}
+
+function filterBySize(temples, size, isLarger) {
+  return temples.filter(temple => {
+    return isLarger ? temple.area > size : temple.area < size;
+  });
+}
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const filter = event.target.textContent;
+    mainHeading.textContent = filter;
+
+    let filteredTemples;
+    switch (filter) {
+      case 'Home':
+        filteredTemples = temples;
+        break;
+      case 'Old':
+        filteredTemples = filterByDate(temples, 1900, true);
+        break;
+      case 'New':
+        filteredTemples = filterByDate(temples, 2000, false);
+        break;
+      case 'Large':
+        filteredTemples = filterBySize(temples, 90000, true);
+        break;
+      case 'Small':
+        filteredTemples = filterBySize(temples, 10000, false);
+        break;
+      default:
+        filteredTemples = temples;
+    }
+
+    displayTemples(filteredTemples);
+  });
 });
 
-document.querySelector("#new").addEventListener("click", () => {
-  createTempleCard(temples.filter((temple) => parseInt(temple.dedicated.split(",")[0]) > 2000));
-});
-
-document.querySelector("#large").addEventListener("click", () => {
-  createTempleCard(temples.filter((temple) => temple.area > 90000));
-});
-
-document.querySelector("#small").addEventListener("click", () => {
-  createTempleCard(temples.filter((temple) => temple.area < 10000));
-});
-
-document.querySelector("#home").addEventListener("click", () => {
-  createTempleCard(temples);
-});
+displayTemples(temples);
