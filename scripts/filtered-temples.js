@@ -7,7 +7,7 @@ const hambutton = document.querySelector('#menu');
 const today = new Date();
 const theLastModify = document.lastModified;
 
-year.innerHTML = &copy${today.getFullYear()} | Kevin Andres Yanez | Ecuador;
+year.innerHTML = &copy${today.getFullYear()} | Josselyn Juleidy Martinez | Ecuador;
 lastModify.innerHTML = <span>Last Modification: ${theLastModify}</span>;
 
 hambutton.addEventListener('click', () => {
