@@ -1,11 +1,11 @@
 @media (min-width: 1264px) {
     main div {
-        max-width: 1245px;
-        margin: 0 auto;
+      max-width: 1245px;
+      margin: 0 auto;
     }
-}
-
-@media (min-width: 949px) {
+  }
+  
+  @media (min-width: 949px) {
     #menu {
       display: none;
     }
