@@ -7,8 +7,8 @@ const hambutton = document.querySelector('#menu');
 const today = new Date();
 const theLastModify = document.lastModified;
 
-year.innerHTML = &copy${today.getFullYear()} | Josselyn Juleidy Martinez | Ecuador;
-lastModify.innerHTML = <span>Last Modification: ${theLastModify}</span>;
+year.innerHTML = `&copy${today.getFullYear()} | Josselyn Juleidy Martinez | Ecuador`;
+lastModify.innerHTML = `<span>Last Modification: ${theLastModify}</span>`;
 
 hambutton.addEventListener('click', () => {
   mainnav.classList.toggle('show');
