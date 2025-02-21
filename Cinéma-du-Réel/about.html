@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinéma Du Réel</title>
+  <meta name="author" content="Josselyn Martinez">
+  <meta name="description"
+    content="Has presented documentaries that address a wide range of topics, from social and political issues to more personal and artistic explorations.">
+  <meta name="keywords" content="contemporary documentary cinema, author documentary cinema, talents, filmmakers">
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+  <header>
+    <img src="./images/logo.svg" alt="Logo of Cinéma Du Réel">
+    <h1> The Cinéma Du Réel</h1>
+    <button id="menuToggle" class="menu-toggle" aria-label="Open/Close menu">&#9776;</button>
+    <nav id="mainNav" class="nav-main nav-mobile">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="about.html">About Me</a>
+    </nav>
+    <button id="themeToggle" aria-label="change theme">Toggle Theme</button>
+  </header>
+  <main id="mainContent">
+    <section id="principal">
+      <h2>About Me</h2>
+      <img src="./images/me.jpg" alt="My profile picture" loading="lazy">
+      <p>Hello! I'm Josselyn Martinez I really like cinematographic art, since I really enjoy the music, the visual effects and the talent behind each film.</p>
+      <p>I love this type of viewing, as there are times when documentaries transport me to special moments in my life.</p>
+    </section>
+
+    <section>
+      <h3>My cinematic journey</h3>
+      <p>Before, it didn't catch my attention, however, as time went by, I discovered how fascinating it can be to immerse yourself in a well-told story, connect with the characters and experience different emotions through cinema.</p>
+      <p>I don't consider watching an international documentary film festival to be a waste of time, but rather a valuable hobby that allows me to relax, be entertained, and, on many occasions, learn something new.</p>
+    </section>
+
+    <section>
+      <h3>My favorite documentaries</h3>
+      <p>Among my favorites are:</p>
+      <ul>
+        <li><strong>Succession:</strong> A chilling look at the heart of a dysfunctional family in the media and entertainment empire.</li>
+        <li><strong>More alive than ever:</strong> It will feature filmmakers with a very lively style.</li>
+        <li><strong>Vourdalak:</strong> Vourdalak presents a strange family that lives in the middle of the countryside. A pale and powdery individual presents himself as an emissary of the King of France.</li>
+        <li><strong>L’Art du muet:</strong> It begins with a false quote from Bushido: “There is no loneliness deeper than that of the samurai". Only the tiger in the jungle can compare with it.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>If you have any questions, comments, or suggestions, feel free to contact me through the following form:</p>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p id="year"></p>
+    <p id="lastModify"></p>
+  </footer>
+  <script src="./script/index.js"></script>
+</body>
+
+</html>
